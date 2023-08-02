@@ -1,7 +1,6 @@
 #include <iostream>
 #include <sstream>
 #include <vector>
-#include <cmath>
 
 void input(std::vector<int>* v, int* B) {
   std::string str;
@@ -17,7 +16,7 @@ void input(std::vector<int>* v, int* B) {
 void subset_sum(std::vector<int> s, int B) {
   // make power set and solve (using bitwise AND)
   std::vector<std::vector<int>> ans;
-  for (int i = 1; i < pow(2, s.size()); i++) {
+  for (int i = 1; i <= (1 << s.size()); i++) {
     std::vector<int> v;
     int sum = 0;
     for (int j = 0; j < s.size(); j++) {
